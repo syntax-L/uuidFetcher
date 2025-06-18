@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const usernameInput = document.getElementById('username');
-    const fetchButton = document.getElementById('fetch-uuid');
-    const resultDiv = document.getElementById('result');
-    const copyButton = document.getElementById('copy-uuid');
+    const uuidForm = document.getElementById('uuidForm'); 
+    const resultDiv = document.getElementById('result'); 
+    const copyButton = document.getElementById('copy-uuid'); 
 
     function getSessionId() {
         const localStorageKey = 'uuid_session_id';
@@ -47,18 +47,16 @@ document.addEventListener('DOMContentLoaded', () => {
         document.cookie = name + "=" + (value || "") + expires + "; path=/; Secure; SameSite=Lax";
     }
 
-    fetchButton.addEventListener('click', async () => {
+    uuidForm.addEventListener('submit', async (event) => {
+        event.preventDefault(); 
+
         const username = usernameInput.value.trim();
         if (!username) {
-            resultDiv.textContent = 'Please enter a username.';
-            resultDiv.style.color = 'orange';
-            copyButton.style.display = 'none';
+            alert('Please enter a username.'); 
             return;
         }
 
-        resultDiv.textContent = 'Fetching UUID...';
-        resultDiv.style.color = 'white';
-        copyButton.style.display = 'none';
+        alert('Fetching UUID...'); 
 
         const workerUrl = `https://mojang-proxy.hardikb0506.workers.dev/api/uuid/${username}`; 
         const sessionId = getSessionId();
@@ -73,8 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             if (response.status === 429) {
-                resultDiv.textContent = 'Too many requests. Please wait a moment and try again.';
-                resultDiv.style.color = 'red';
+                alert('Too many requests. Please wait a moment and try again.'); // Changed to alert
                 return;
             }
 
@@ -92,29 +89,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const data = await response.json();
             if (data && data.id) {
-                resultDiv.textContent = `UUID for ${data.name || username}: ${data.id}`;
-                resultDiv.style.color = 'lightgreen';
-                copyButton.dataset.uuid = data.id;
-                copyButton.style.display = 'block';
+                alert(`UUID for ${data.name || username}: ${data.id}`); 
             } else {
-                resultDiv.textContent = `UUID not found for ${username}.`;
-                resultDiv.style.color = 'orange';
+                alert(`UUID not found for ${username}.`); 
             }
         } catch (error) {
             console.error('Error fetching UUID:', error);
-            resultDiv.textContent = `Error: ${error.message}`;
-            resultDiv.style.color = 'red';
+            alert(`Error: ${error.message}`); 
         }
     });
 
     copyButton.addEventListener('click', () => {
-        const uuidToCopy = copyButton.dataset.uuid;
-        if (uuidToCopy) {
-            navigator.clipboard.writeText(uuidToCopy).then(() => {
-                alert('UUID copied to clipboard!');
-            }).catch(err => {
-                console.error('Failed to copy UUID:', err);
-            });
-        }
+        alert('Copy functionality is not available when results are shown in alerts.');
     });
 });
