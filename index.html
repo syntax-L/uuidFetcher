@@ -21,11 +21,12 @@
     <form id="uuidForm">
         <label for="username">Username: </label>
         <input type="text" name="username" id="username" required>
-        <button type="submit" id="fetch-uuid">Submit</button> 
+        <button type="button" id="fetch-uuid">Submit</button> 
     </form>
 
     <div id="result"></div> 
     <button id="copy-uuid" style="display: none;">Copy UUID</button> 
+
     <section class="faq-section">
         <h2>FAQ</h2>
 
@@ -77,7 +78,7 @@
             <input type="checkbox" id="faq5">
             <label for="faq5">What happens if a player changes their Minecraft username?</label>
             <div class="faq-content">
-                <p>When a player changes their Minecraft username, their UUID remains the same. This is key to maintaining consistency. Servers, plugins, and game data (like inventory, achievements, and builds) that rely on UUIDs will automatically associate the new username with the existing player data. Old usernames are made available for others after a cooldown period, but the unique UUID ensures continuity for the original player.</p>
+                <p>When a player changes their Minecraft username, their UUID remains the same. This is key to maintaining consistency. Servers, plugins, and game data (like economy balance, build permissions, or claim land) that rely on UUIDs will automatically associate the new username with the existing player data. Old usernames are made available for others after a cooldown period, but the unique UUID ensures continuity for the original player.</p>
             </div>
         </div>
 
