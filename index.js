@@ -17,7 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         try {
             // Make the API request
-            const response = await fetch(apiUrl);
+            const workerUrl = `https://mojang-proxy.hardikb0506.workers.dev/api/uuid/${username}`; 
+            const response = await fetch(workerUrl);
 
             // Check if the response was successful (status code 200-299)
             if (response.ok) {
