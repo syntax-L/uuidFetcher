@@ -2,7 +2,7 @@
 a super bare-bones uuid fetchur
 
 # How to use?
-The official website where I host this app is https://uuidfetchur.pages.dev/
+The official website where I host this app is https://uuidfetcher.pages.dev/
 if, for any reason, the site is down or the rate limit is exhausted, you can do the following to obtain someone's uuid
 
 1. Open a new tab on your browser
