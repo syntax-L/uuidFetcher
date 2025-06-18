@@ -1,5 +1,5 @@
-# uuidFetchur
-a super bare-bones uuid fetchur
+# uuidFetcher
+a super bare-bones uuid fetcher
 
 # How to use?
 The official website where I host this app is https://uuidfetcher.pages.dev/
