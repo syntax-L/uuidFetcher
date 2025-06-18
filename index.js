@@ -1,3 +1,5 @@
+
+
 document.addEventListener('DOMContentLoaded', () => {
     const usernameInput = document.getElementById('username');
     const uuidForm = document.getElementById('uuidForm'); 
@@ -52,11 +54,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const username = usernameInput.value.trim();
         if (!username) {
-            alert('Please enter a username.'); 
+            alert('Please enter a username.');
             return;
         }
-
-        alert('Fetching UUID...'); 
 
         const workerUrl = `https://mojang-proxy.hardikb0506.workers.dev/api/uuid/${username}`; 
         const sessionId = getSessionId();
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             if (response.status === 429) {
-                alert('Too many requests. Please wait a moment and try again.'); // Changed to alert
+                alert('Too many requests. Please wait a moment and try again.');
                 return;
             }
 
@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (data && data.id) {
                 alert(`UUID for ${data.name || username}: ${data.id}`); 
             } else {
-                alert(`UUID not found for ${username}.`); 
+                alert(`UUID not found for ${username}.`);
             }
         } catch (error) {
             console.error('Error fetching UUID:', error);
