@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
         resultDiv.style.color = 'white';
         copyButton.style.display = 'none';
 
-        const workerUrl = `https://mojang-proxy.YOUR_SUBDOMAIN.workers.dev/api/uuid/${username}`; 
+        const workerUrl = `https://mojang-proxy.hardikb0506.workers.dev/api/uuid/${username}`; 
         const sessionId = getSessionId();
 
         try {
