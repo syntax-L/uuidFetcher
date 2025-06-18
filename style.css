@@ -1,0 +1,244 @@
+body {
+    background-image: url("background.png");
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    height: 100vh;
+    margin: 0;
+    min-height: 100vh; 
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    padding-bottom: 50px; 
+}
+
+body:has(.faq-section) {
+    justify-content: flex-start; 
+    padding-top: 50px; 
+}
+
+
+h1 {
+    color: #CC0000;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 5px;
+    font-size: 13vh;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-weight: 700;
+}
+
+h3 {
+    color: #FFD700;
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 0;
+    font-size: 5vh;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    font-weight: 400;
+}
+
+hr {
+    border: none;
+    border-top: 2px solid #CC0000;
+    width: 60%;
+    margin-bottom: 30px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+form {
+    background-color: rgba(29, 29, 29, 0.9);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 400px;
+    max-width: 90%;
+    border: 1px solid rgba(60, 60, 60, 0.5);
+    margin-bottom: 50px; 
+}
+
+label {
+    font-size: 6vh;
+    color: #f0f0f0;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+}
+
+input[type="text"] {
+    background-color: #3a3a3a;
+    color: #e0e0e0;
+    padding: 15px 20px;
+    font-size: 1.2em;
+    border: 1px solid #555;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+    font-family: 'Open Sans', sans-serif;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #00bcd4;
+    box-shadow: 0 0 10px rgba(0, 188, 212, 0.6);
+    background-color: #4a4a4a;
+}
+
+button[type="submit"] {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 8px;
+    background-color: #CC0000;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    font-family: 'Montserrat', sans-serif;
+}
+
+button[type="submit"]:hover {
+    background-color: #FF3333;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+button[type="submit"]:active {
+    transform: translateY(0);
+    background-color: #990000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.faq-section {
+    width: 60%; 
+    max-width: 800px;
+    margin-top: 40px; 
+    margin-bottom: 80px;
+    background-color: rgba(29, 29, 29, 0.85); 
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    color: #e0e0e0; 
+    font-family: 'Open Sans', sans-serif;
+}
+
+.faq-section h2 {
+    text-align: center;
+    color: #FFD700; 
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3em; 
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.faq-item {
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(100, 100, 100, 0.3); 
+    padding-bottom: 15px;
+}
+
+.faq-item:last-child {
+    border-bottom: none; 
+    padding-bottom: 0;
+}
+
+.faq-item input[type="checkbox"] {
+    display: none; 
+}
+
+.faq-item label {
+    display: block;
+    cursor: pointer;
+    padding: 15px 20px;
+    background-color: rgba(45, 45, 45, 0.95); 
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: 600; 
+    color: #f0f0f0;
+    position: relative;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.faq-item label::after {
+    content: '+';
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5em;
+    color: #CC0000; 
+    transition: transform 0.3s ease;
+}
+
+.faq-item input[type="checkbox"]:checked + label::after {
+    content: '-'; 
+    transform: translateY(-50%) rotate(180deg);
+    color: #FFD700; 
+}
+
+.faq-item input[type="checkbox"]:checked + label {
+    background-color: rgba(60, 60, 60, 0.95); 
+    color: #FFD700; 
+}
+
+.faq-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out; 
+    padding: 0 20px; 
+    background-color: rgba(35, 35, 35, 0.9); 
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2); 
+}
+
+.faq-item input[type="checkbox"]:checked ~ .faq-content {
+    max-height: 500px; 
+    padding: 20px; 
+}
+
+.faq-content p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.faq-content ul {
+    list-style: disc inside; 
+    padding-left: 10px;
+    line-height: 1.6;
+}
+
+.faq-content ul li {
+    margin-bottom: 5px;
+}
+
+.footer {
+    width: 100%;
+    background-color: rgba(29, 29, 29, 0.95); 
+    color: #f0f0f0; 
+    text-align: center;
+    padding: 20px 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.9em;
+    margin-top: auto; 
+    border-top: 1px solid rgba(100, 100, 100, 0.3); 
+}
+
+.footer p {
+    margin: 5px 0;
+}
+
+.footer .creator-name {
+    color: #CC0000; 
+    font-weight: bold;
+}
+
+.footer .discord-tag {
+    color: #00bcd4;
+    font-weight: bold;
+}

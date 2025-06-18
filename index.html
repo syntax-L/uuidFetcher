@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
+    <title>uuidFetcher</title>
+</head>
+<body>
+
+    <div class="centered-content">
+        <h1>Minecraft UUID Fetcher</h1>
+        <h3>by <strong>syntaxL</strong></h3>
+        <hr color="gray">
+    </div>
+
+    <form id="uuidForm">
+        <label for="username">Username: </label>
+        <input type="text" name="username" id="username" required>
+        <button type="submit">Submit</button>
+    </form>
+
+    <section class="faq-section">
+        <h2>FAQ</h2>
+
+        <div class="faq-item">
+            <input type="checkbox" id="faq1">
+            <label for="faq1">Why is a Minecraft UUID Fetcher important?</label>
+            <div class="faq-content">
+                <p>A Minecraft UUID Fetcher is crucial for various reasons. Unlike usernames, which can be changed, a player's UUID (Universally Unique Identifier) is permanent and unique. This makes UUIDs essential for:</p>
+                <ul>
+                    <li><strong>Server Management:</strong> Identifying players reliably for whitelists, bans, ranks, and permissions, even if they change their in-game name.</li>
+                    <li><strong>Plugin & Mod Development:</strong> Many server plugins and client-side mods rely on UUIDs to store player-specific data consistently.</li>
+                    <li><strong>API Interactions:</strong> When interacting with Minecraft's official APIs or third-party services, UUIDs are the standard for player identification.</li>
+                    <li><strong>Data Persistence:</strong> Ensuring that player progress, inventory, and statistics remain tied to the correct individual regardless of name changes.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <input type="checkbox" id="faq2">
+            <label for="faq2">What is a Minecraft UUID?</label>
+            <div class="faq-content">
+                <p>A UUID stands for **Universally Unique Identifier**. In Minecraft, it's a 32-character hexadecimal string (e.g., `xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx`) that is permanently assigned to each Minecraft player account. While players can change their in-game username, their UUID always remains the same. It acts like a unique digital fingerprint for every player.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <input type="checkbox" id="faq3">
+            <label for="faq3">How are UUIDs used in Minecraft?</label>
+            <div class="faq-content">
+                <p>UUIDs are fundamental to how Minecraft servers and related services operate:</p>
+                <ul>
+                    <li><strong>Banning & Whitelisting:</strong> Server administrators use UUIDs to ensure a ban or whitelist applies to the player, not just their current username.</li>
+                    <li><strong>Player Data Storage:</strong> Plugins often store player data (like economy balance, build permissions, or claim land) tied to their UUID, so if a player changes their name, they don't lose their progress.</li>
+                    <li><strong>Skin Servers:</strong> When you see a player's skin, the game often looks up the skin associated with their UUID, not their username.</li>
+                    <li><strong>Mojang API:</strong> The official Mojang API uses UUIDs extensively for retrieving player profiles, name history, and other account-related information.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <input type="checkbox" id="faq4">
+            <label for="faq4">Can a Minecraft UUID change?</label>
+            <div class="faq-content">
+                <p>No, a Minecraft UUID for a specific account is **permanent and cannot be changed**. This is by design, as it ensures persistent identification of players across name changes and different servers. Only the username associated with a UUID can be altered.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <input type="checkbox" id="faq5">
+            <label for="faq5">What happens if a player changes their Minecraft username?</label>
+            <div class="faq-content">
+                <p>When a player changes their Minecraft username, their UUID remains the same. This is key to maintaining consistency. Servers, plugins, and game data (like inventory, achievements, and builds) that rely on UUIDs will automatically associate the new username with the existing player data. Old usernames are made available for others after a cooldown period, but the unique UUID ensures continuity for the original player.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <input type="checkbox" id="faq6">
+            <label for="faq6">Where can I see a player's UUID in-game or via command?</label>
+            <div class="faq-content">
+                <p>While you can't directly see a player's UUID displayed in the vanilla Minecraft game interface for general players, server administrators have a few options:</p>
+                <ul>
+                    <li><strong>Server Console/Logs:</strong> When a player joins, their UUID is often logged in the server console.</li>
+                    <li><strong>Server Whitelist/Ban Files:</strong> These files often store UUIDs directly.</li>
+                    <li><strong>Plugins:</strong> Many server plugins offer commands (e.g., <code>/uuid &lt;username&gt;</code>) to look up a player's UUID.</li>
+                    <li><strong>Mojang API:</strong> External tools (like this fetcher!) use the official Mojang API to retrieve a player's UUID by their username.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <input type="checkbox" id="faq7">
+            <label for="faq7">Is a UUID used for bedrock edition players?</label>
+            <div class="faq-content">
+                <p>Minecraft Bedrock Edition (for Windows 10, consoles, and mobile) uses different account systems (Microsoft Accounts/Xbox Live Gamertags) and therefore has a different identifier system than Java Edition's UUIDs. While Bedrock players also have a unique identifier, it's not the same 32-character hexadecimal UUID used for Java Edition accounts. Tools like this fetcher are specifically designed for Minecraft Java Edition UUIDs.</p>
+            </div>
+        </div>
+
+    </section>
+    <footer class="footer">
+        <p>Made by <span class="creator-name">syntaxL</span></p>
+        <p>Discord: <span class="discord-tag">@esyntax</span></p>
+    </footer>
+    </body>
+</html>
